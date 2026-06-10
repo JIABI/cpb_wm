@@ -1,4 +1,3 @@
-````markdown
 # Certified Planning Bandwidths for Neural World-Model Agents
 
 This repository contains the anonymized implementation and source tables for the paper:
@@ -510,6 +509,4 @@ During double-anonymous review, please cite the anonymized manuscript.
 
 A public BibTeX entry will be added after acceptance.
 
-```
-```
 
