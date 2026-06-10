@@ -1,0 +1,7 @@
+# @package _global_
+method:
+  name: rnd
+  description: "DreamerV3 + Random Network Distillation"
+  rnd_dim: 64
+  bonus_scale: 0.1
+  rnd_lr: 1.0e-4

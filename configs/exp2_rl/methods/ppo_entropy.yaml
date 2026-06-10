@@ -1,0 +1,9 @@
+# @package _global_
+method:
+  name: ppo_entropy
+  description: "PPO with entropy bonus β=0.01"
+  entropy_coef: 0.01
+  clip_eps: 0.2
+  n_epochs: 10
+  rollout_steps: 2048
+  lr: 3.0e-4

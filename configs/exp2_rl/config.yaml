@@ -1,0 +1,56 @@
+defaults:
+  - _self_
+
+experiment_name: exp2_dreamer
+
+# Environment
+env:
+  suite: cheetah          # dm_control suite name
+  task: run               # dm_control task name
+  frame_stack: 1          # observation frame stacking
+  action_repeat: 2        # action repeat for faster learning
+
+# Stochastic wrappers (Phase A baseline = no noise; set nonzero for Phase C)
+noise:
+  sigma_obs: 0.0          # observation noise std
+  sigma_reward: 0.0       # reward noise std
+  sigma_dynamics: 0.0     # dynamics shift scale
+
+# DreamerV3 hyperparameters (Phase A/B baseline)
+dreamer:
+  ensemble_size: 3        # K=3 RSSM ensemble members (Phase A/B; scale to 5 in Phase C)
+  batch_size: 16
+  batch_length: 64
+  imagination_horizon: 15
+  kl_free: 1.0
+  kl_scale: 1.0
+  gamma: 0.997
+  lambda_: 0.95
+  actor_lr: 3.0e-5
+  critic_lr: 3.0e-5
+  world_model_lr: 1.0e-4
+
+# K-means action discretization (required — NO raw continuous actions)
+kmeans:
+  n_clusters: 20          # |A_discrete| = 20 centroids per action-dim
+  fit_episodes: 50        # warm-up episodes to collect actions for fitting
+  random_state: 42
+
+# NMS bandwidth estimation
+nms:
+  alpha: 0.1              # violation rate threshold α
+  sigma_grid:
+    min: 0.0
+    max: 0.5
+    n: 21
+
+# Training
+training:
+  total_steps: 1_000_000  # environment steps
+  eval_every: 10_000
+  eval_episodes: 10
+  save_every: 50_000
+
+# Reproducibility
+seeds: 3
+seed: 0

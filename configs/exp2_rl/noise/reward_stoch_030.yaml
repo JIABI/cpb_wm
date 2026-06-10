@@ -1,0 +1,5 @@
+# @package _global_
+noise:
+  sigma_obs: 0.0
+  sigma_reward: 0.30
+  sigma_dynamics: 0.0

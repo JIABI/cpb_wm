@@ -1,0 +1,23 @@
+defaults:
+  - _self_
+
+experiment_name: part0_scaffold
+seed: 42
+n_seeds: 30
+output_dir: results/runs/${experiment_name}/${now:%Y-%m-%d_%H-%M-%S}
+
+nms:
+  alpha: 0.1
+  horizon: 100
+  response_map: linear
+  response_c: 1.0
+  sigma_grid:
+    min: 0.0
+    max: 2.0
+    n: 40
+
+logging:
+  wandb:
+    project: nms
+    mode: online
+  level: INFO

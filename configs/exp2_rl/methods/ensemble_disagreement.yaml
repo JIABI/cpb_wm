@@ -1,0 +1,6 @@
+# @package _global_
+method:
+  name: ensemble_disag
+  description: "DreamerV3 + ensemble disagreement intrinsic reward"
+  ensemble_k: 3
+  bonus_scale: 0.1

@@ -1,0 +1,5 @@
+# @package _global_
+method:
+  name: dreamer_fixed_001
+  description: "DreamerV3 fixed τ=0.01"
+  actor_temperature: 0.01

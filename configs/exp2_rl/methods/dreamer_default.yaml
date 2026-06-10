@@ -1,0 +1,5 @@
+# @package _global_
+method:
+  name: dreamer_default
+  description: "DreamerV3 default (τ=1.0, no NMS)"
+  actor_temperature: 1.0

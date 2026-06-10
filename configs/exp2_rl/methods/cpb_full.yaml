@@ -1,0 +1,8 @@
+# @package _global_
+method:
+  name: cpb_full
+  description: "DreamerV3 + CPB (match + cap)"
+  use_cpb_match: true
+  use_cpb_cap: true
+  sigma_min: 0.0
+  sigma_max: 0.5

@@ -1,0 +1,6 @@
+# @package _global_
+method:
+  name: dreamer_autotuned
+  description: "DreamerV3 SAC-style entropy autotuning"
+  target_entropy: null   # null → -act_dim (auto)
+  temperature_lr: 3.0e-4

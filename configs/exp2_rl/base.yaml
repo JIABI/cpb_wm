@@ -1,0 +1,44 @@
+defaults:
+  - _self_
+
+# ── training ──────────────────────────────────────────────────────────────────
+training:
+  total_steps: 1_000_000
+  eval_every: 10_000
+  eval_episodes: 10
+  save_every: 50_000
+
+# ── DreamerV3 base hyperparameters ───────────────────────────────────────────
+dreamer:
+  ensemble_size: 3           # K=3 RSSM ensemble (Phase A/B)
+  batch_size: 16
+  batch_length: 64
+  imagination_horizon: 15
+  kl_free: 1.0
+  kl_scale: 1.0
+  gamma: 0.997
+  lambda_: 0.95
+  actor_lr: 3.0e-5
+  critic_lr: 3.0e-5
+  world_model_lr: 1.0e-4
+  prefill_steps: 2500
+  train_every: 5
+
+# ── K-means action discretization ────────────────────────────────────────────
+kmeans:
+  n_clusters: 20
+  fit_steps: 10_000
+  random_state: 42
+
+# ── NMS bandwidth estimation ─────────────────────────────────────────────────
+nms:
+  alpha: 0.1
+  horizon: 15
+  sigma_grid:
+    min: 0.0
+    max: 0.5
+    n: 21
+  n_calibration_pairs: 200
+
+# ── Reproducibility ───────────────────────────────────────────────────────────
+seed: 0

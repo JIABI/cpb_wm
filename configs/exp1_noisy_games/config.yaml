@@ -1,0 +1,28 @@
+defaults:
+  - /base
+  - _self_
+
+experiment_name: exp1_noisy_games
+
+game: ipd
+noise_levels: [0.0, 0.05, 0.1, 0.15, 0.2, 0.3]
+
+sigma:
+  min: 0.0
+  max: 0.8
+  n: 41
+
+horizon: 200
+episodes: 2000
+seeds: 10
+
+# Phase A v4: opponent mixture + composite violation
+opponent_mixture: "reciprocal:0.8,always_defect:0.2"
+violation_mode: "spiral_or_exploit"
+# min_len=15 prevents AllD from trivially triggering 5-step spirals;
+# the bandwidth [~0.32, ~0.67] emerges as a true interior interval.
+spiral_len: 15
+exploit_len: 15
+safe_threshold: 2.0
+
+alpha: 0.1

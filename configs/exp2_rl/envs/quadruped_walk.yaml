@@ -1,0 +1,6 @@
+# @package _global_
+env:
+  suite: quadruped
+  task: walk
+  frame_stack: 1
+  action_repeat: 2

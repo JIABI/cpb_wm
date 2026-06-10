@@ -1,0 +1,17 @@
+defaults:
+  - base
+  - env: cheetah_run
+  - noise: clean
+  - method: cpb_full
+  - _self_
+
+# Override seed per run
+seed: 0
+
+# PyTorch device (cpu for CI, cuda for GPU training)
+device: cpu
+
+# Logging
+wandb:
+  project: nms-exp2
+  mode: disabled   # set to "online" for real runs

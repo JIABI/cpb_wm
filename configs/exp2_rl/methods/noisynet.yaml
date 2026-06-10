@@ -1,0 +1,5 @@
+# @package _global_
+method:
+  name: noisynet
+  description: "DreamerV3 + NoisyNet exploration"
+  sigma_init: 0.5
